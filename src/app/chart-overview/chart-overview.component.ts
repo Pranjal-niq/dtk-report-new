@@ -27,7 +27,7 @@ export class ChartOverviewComponent implements OnInit {
     "name": ""
   },{
     "value": 0,
-    "color": '#10009D',
+    "color": '#f5f3f0',
     "name": "",
   },{
     "value": 0,
@@ -47,7 +47,7 @@ export class ChartOverviewComponent implements OnInit {
     "name": ""
   },{
     "value": 0,
-    "color": '#10009D',
+    "color": '#f5f3f0',
     "name": "",
   },{
     "value": 0,

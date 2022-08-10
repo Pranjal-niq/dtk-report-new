@@ -62,7 +62,7 @@ export class StackChartComponent implements OnInit {
   private xTitle = "Companies";
   private yTitle = "Employee Count";
 
-  private colors = ['#00A346', '#10009D', '#FF6D05'];
+  private colors = ['#00A346', '#f5f3f0', '#FF6D05'];
 
   constructor(private container: ElementRef) {}
 
@@ -149,12 +149,14 @@ export class StackChartComponent implements OnInit {
   }
 
   private createStack(stackData: any) {
+    // console.log("helloBHAI"+JSON.stringify(stackData));
     this.stackedSeries = this.stack(stackData);
-    console.log(this.stackedSeries);
+    console.log("hello"+JSON.stringify(this.stackedSeries));
     this.drawChart(this.stackedSeries);
   }
 
   private drawChart(data: any) {
+    console.log("hello mia"+ data )
     this.layersBar = this.layersBarArea
       .selectAll('.layer')
       .data(data)
@@ -167,7 +169,8 @@ export class StackChartComponent implements OnInit {
 
     this.x.domain(
       this.data.map((d: any) => {
-        return d.date;
+        console.log("arey"+JSON.stringify(d));
+        return d.company;
       })
     );
 
@@ -191,7 +194,7 @@ export class StackChartComponent implements OnInit {
         return this.y(d[1]);
       })
       .attr('x', (d: any, i: any) => {
-        return this.x(d.data.date);
+        return this.x(d.data.company);
       })
       .attr('width', this.x.bandwidth())
       .attr('height', (d: any, i: any) => {

@@ -1,3 +1,4 @@
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DataServiceService } from '../data-service/data-service.service';
@@ -12,7 +13,7 @@ describe('HomeComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ HomeComponent ],
-      imports: [HttpClientTestingModule]
+      imports: [HttpClientTestingModule,NoopAnimationsModule]
     })
     .compileComponents();
     dataService = TestBed.inject(DataServiceService);
